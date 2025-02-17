@@ -10,7 +10,7 @@ log_path = 'log.txt'  # 记录完整 API 信息
 
 # 站点映射关系（拼音首字母）
 site_mappings = {
-    '立播': 'lb',
+    '立播': 'labi',
     '闪电': 'sd',
     '欧哥': 'og',
     '小米': 'xm',
