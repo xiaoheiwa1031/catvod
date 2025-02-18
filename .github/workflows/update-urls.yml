@@ -30,10 +30,19 @@ jobs:
       - name: 运行脚本
         run: python url.py
 
-      - name: 提交更改
+      - name: 设置 Git 配置信息
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+
+      - name: 提交更改
+        run: |
           git add url.json
           git commit -m "更新 url.json" || echo "No changes to commit"
-          git push
+
+      - name: 推送更改
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 来进行身份验证
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/xiaoheiwa1031/catvod.git
+          git push origin main
