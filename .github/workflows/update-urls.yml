@@ -12,6 +12,8 @@ on:
 jobs:
   update-urls:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 显式设置写权限
 
     steps:
       - name: 检出代码
