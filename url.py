@@ -165,7 +165,7 @@ if __name__ == "__main__":
     ret = main()
     if ret:
         try:
-            response = requests.get('https://cat.cwyml.us.kg/test/del/redirect', params={
+            response = requests.get('https://catvod.cwyml.cn/test/del/redirect', params={
                 'token': 'hwhyxxwx'
             }, verify=False)
             if response.status_code == 200:
